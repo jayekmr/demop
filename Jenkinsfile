@@ -10,7 +10,7 @@ pipeline{
     stages {
         stage('Checkout from Git'){
             steps{
-                git branch: 'master', url: 'https://github.com/jayekmr/myai.git'
+                git branch: 'master', url: 'https://github.com/jayekmr/demop.git'
             }
         }
         stage('Install Dependencies') {
