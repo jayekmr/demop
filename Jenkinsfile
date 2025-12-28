@@ -33,7 +33,7 @@ pipeline{
                 }
             }
         }
-                stage('OWASP FS SCAN') {
+        stage('OWASP FS SCAN') {
             environment {
                 NVD_API_KEY = credentials('NVD_API_KEY')
             }
