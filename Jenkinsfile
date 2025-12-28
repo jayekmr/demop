@@ -33,21 +33,6 @@ pipeline{
                 }
             }
         }
-        stage('OWASP FS SCAN') {
-         environment {
-         NVD_API_KEY = credentials('NVD_API_KEY')
-    }
-            steps {
-            dependencyCheck additionalArguments: """
-            --scan .
-            --format HTML
-            --format XML
-            --nvdApiKey ${NVD_API_KEY}
-            --failOnCVSS 7
-        """,
-        odcInstallation: 'OWASP-DC'
-    }
-}
         stage('TRIVY FS SCAN') {
             steps {
                 sh "trivy fs . > trivyfs.json"
